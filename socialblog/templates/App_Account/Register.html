@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block title %}User Sign Up{% endblock title %} {%
+load tailwind_filters %} {% load crispy_forms_tags %}
+<div>
+  {% block content %}
+
+  <div class="flex justify-center items-center p-5">
+    <form method="POST">
+      {% csrf_token %} {{form|crispy}}
+      <button
+        class="px-2 py-2 bg-green-300 block w-full rounded hover:bg-green-500"
+      >
+        Register
+      </button>
+      <p class="text-sm max-w-80 mx-auto mt-10">
+        Alrady Have An Account.Please <span> </span>
+        <a href="/login" class="font-bold underline"> Login </a>
+      </p>
+    </form>
+  </div>
+
+  {% endblock content %}
+</div>

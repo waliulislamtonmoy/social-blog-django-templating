@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block title %}Profile{% endblock title %} {% load
+tailwind_filters %} {% load crispy_forms_tags %}
+<div>
+  {% block content %}
+
+  <div class="p-10">
+    <div class="px-3 py-2 text-left">
+      <p class="text-2xl font-bold">User Profile :</p>
+    </div>
+
+    <div>
+      <ul>
+        <li><strong>User Name</strong> : {{user.username}}</li>
+        <li><strong>Email</strong> : {{user.email}}</li>
+        <li><strong>Email</strong> : {{user.first_name}}</li>
+        <li><strong>Email</strong> : {{user.last_name}}</li>
+        
+      </ul>
+    </div>
+    <div class="p-5 px-2 py-2 bg-green-300 rounded mt-10">
+      <p class="text-xl">Chnage Profile Information : <a href="{% url "change-profile" %}"><strong>Change</strong></a></p>
+    </div>
+  </div>
+
+  {% endblock content %}
+</div>
